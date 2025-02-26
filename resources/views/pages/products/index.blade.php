@@ -13,5 +13,39 @@
 @endsection
 
 @section('content')
-<div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus in placeat similique dolores, maiores veritatis dolor amet sapiente sunt quod commodi facere repudiandae, laudantium libero dolorem. Nobis, facilis consequatur. Cupiditate?</div>
+<div class="row"></div>
+<div class="col">
+  <div class="card">
+    <div class="card-body">
+     <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Produk</th>
+          <th>Description</th>
+          <th>Kode</th>
+          <th>Harga</th>
+          <th>Stok</th>
+          <th>Kategori</th>
+        </tr>
+      </thead>
+      <thead>
+        <tbody>
+        @foreach ($products as $products)
+        <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $products->name }}</td>
+          <td>{{ $products->description }}</td>
+          <td>{{ $products->kode }}</td>
+          <td>{{ $products->price }}</td>
+          <td>{{ $products->stock }}</td>
+          <td>{{ $products->category->name}}</td>
+          </tr>
+          @endforeach
+        </tbody>
+      </thead>
+     </table> 
+    </div>
+  </div>
+</div>
 @endsection
